@@ -77,10 +77,10 @@ VectorXd Tools::Polar2Cartesian(const Eigen::VectorXd &z){
 	float phi = z(1);
 	float rho_dot = z(2);
 
-	float px = rho * sin(phi);
-	float py = rho * cos(phi);
-	float vx = rho_dot * sin(phi);
-	float vy = rho_dot * cos(phi);
+	float px = rho * cos(phi);
+	float py = rho * sin(phi);
+	float vx = rho_dot * cos(phi);
+	float vy = rho_dot * sin(phi);
 
 	VectorXd x_ = VectorXd(4);
 	x_ << px, py, vx, vy;

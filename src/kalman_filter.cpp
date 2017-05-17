@@ -49,6 +49,10 @@ void KalmanFilter::UpdateEKF(const VectorXd &z) {
   	MatrixXd Hj = tools.CalculateJacobian(x_);
 	VectorXd z_pred = this->Cartesian2Polar(x_);
 	VectorXd y = z - z_pred;
+	while (y(1) < -M_PI)
+		y(1) += 2 * M_PI;
+	while (y(1) > M_PI)
+		y(1) -= 2 * M_PI;
 	MatrixXd Ht = Hj.transpose();
 	MatrixXd S = Hj * P_ * Ht + R_radar_;
 	MatrixXd Si = S.inverse();
