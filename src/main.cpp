@@ -163,6 +163,9 @@ int main(int argc, char* argv[]) {
     out_file_ << gt_pack_list[k].gt_values_(2) << "\t";
     out_file_ << gt_pack_list[k].gt_values_(3) << "\n";
 
+    // cout << fusionEKF.ekf_.x_ << endl;
+    // cout << gt_pack_list[k].gt_values_ << endl;
+
     estimations.push_back(fusionEKF.ekf_.x_);
     ground_truth.push_back(gt_pack_list[k].gt_values_);
   }

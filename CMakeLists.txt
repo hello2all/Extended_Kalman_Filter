@@ -11,3 +11,5 @@ set(sources
     src/tools.cpp)
 
 add_executable(ExtendedKF ${sources})
+set(CMAKE_CXX_FLAGS_DEBUG "${CMAKE_CXX_FLAGS_DEBUG} -Wall")
+# set(CMAKE_CXX_FLAGS_RELEASE "${CMAKE_CXX_FLAGS_RELEASE} -Wall")
